@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+{% block title %}
+Bonjour
+{% endblock %}
+
+
+{% block body %}
+<center>
+    <H1>Convertisseur</H1>
+        <form method="POST">
+            Nombre de Depart:
+            <input type="text" name="nombre" class="form-control w-25"><br>
+            Base de depart:
+            <select class="form-control w-25" name="basedepart" id="pet-select">
+                <option value="">-- selectionner la base de depart --</option>
+                <option value="2">2</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+            </select><br>
+
+
+
+            base de resultat:
+            <select class="form-control w-25" name="basearriver" id="pet-select">
+                <option value="">-- selectionner la base du resultat --</option>
+                <option value="2">2</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+            </select><br>
+            <button type="submit" class="btn btn-dark mb-2">Envoyer</button>
+        </form> 
+<div class="w-25 bg-dark text-white h-25">
+        <p>Et le resultat est : 
+                {% if result is defined %}
+                {{ result }}
+                {% endif %}   
+            </p>
+</div>
+</center>
+{% endblock %}
